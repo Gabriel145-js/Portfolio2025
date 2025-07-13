@@ -1,0 +1,102 @@
+@use '../../styles/variables'
+
+.container_heroSection
+    width: 100%
+
+.hero
+    display: flex
+    justify-content: space-around
+    align-items: center
+    gap: 10px
+    z-index: 999
+    height: auto
+    min-height: 80vh
+    padding: 16px 16px
+
+.aboutHero
+    width: 40%
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    h1
+        font-family: variables.$fontPoppins
+        font-size: 3.5rem
+        margin: 0
+
+    h2
+        color: #fff
+        font-family: variables.$fontPoppins
+        margin: 0
+
+        .variavel
+            margin-left: 8px
+            font-family: variables.$fontPoppins
+            font-weight: 500
+            animation: fade 0.5s ease-in-out
+
+    .descricaoHero
+        font-family: variables.$fontOpenSans
+
+.gradientNome
+    font-family: variables.$fontMontserrat
+    margin: 0
+    background-image: linear-gradient(156deg, rgba(61, 129, 246, 1) 59%, rgba(137, 93, 246, 1) 100%)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    -webkit-text-fill-color: transparent
+
+.imgHero
+    
+    width: 40%
+    height: 40%
+
+
+.btnsHero
+    display: inline-flex
+    gap: 10px
+    width: auto
+
+    button
+        border-radius: 6px
+        color: #fff
+        padding: 10px
+        cursor: pointer
+        font-family: variables.$fontPoppins
+        font-weight: 700
+
+.btnProjetos
+    background: #3D7AF4
+    background: linear-gradient(156deg, rgba(61, 122, 244, 1) 59%, rgba(78, 74, 230, 1) 100%)
+    border: none
+
+.btnContact
+    background: transparent
+    border: 2px solid #3D7AF4
+    transition: background 0.3s ease-in-out
+
+    &:hover
+        background: #3D7AF4
+        transition: background 0.3s ease-in-out
+
+.wave
+    display: inline-block
+    animation: acenar 2s infinite
+    transform-origin: 70% 70%
+
+@keyframes acenar
+    0%
+        transform: rotate(0deg)
+    10%
+        transform: rotate(14deg)
+    20%
+        transform: rotate(-8deg)
+    30%
+        transform: rotate(14deg)
+    40%
+        transform: rotate(-4deg)
+    50%
+        transform: rotate(10deg)
+    60%, 100%
+        transform: rotate(0deg)
