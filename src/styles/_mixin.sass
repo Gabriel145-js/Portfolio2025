@@ -1,0 +1,38 @@
+@use 'variables'
+
+@mixin gradientTexto
+    background-image: linear-gradient(156deg, rgba(61, 129, 246, 1) 59%, rgba(137, 93, 246, 1) 100%)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    -webkit-text-fill-color: transparent
+
+@mixin tituloEstilizado
+    font-family: variables.$fontPoppins
+    font-size: variables.$sizeTitulos
+    text-align: center
+    position: relative
+
+    &::after
+        content: ''
+        position: absolute
+        bottom: 0px
+        left: 50%
+        transform: translateX(-50%)
+        height: 5px
+        width: 120px
+        background-image: linear-gradient(156deg, rgba(61, 129, 246, 1), rgba(137, 93, 246, 1))
+        border-radius: 10px
+
+@mixin paragrafoEstilizado
+    font-family: variables.$fontOpenSans
+    font-size: 1.1rem
+    text-align: center
+    margin: 0
+    color: variables.$colorDescricao
+
+
+@mixin btnsBackgroud
+    background: #3D7AF4
+    background: linear-gradient(156deg, rgba(61, 122, 244, 1) 59%, rgba(78, 74, 230, 1) 100%)
+    
