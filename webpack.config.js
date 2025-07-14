@@ -1,52 +1,85 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: '/',
+    publicPath: "/",
   },
-  mode: 'development',
-  devtool: 'source-map',
+  mode: "development",
+  devtool: "source-map",
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    static: [
+      path.join(__dirname, "dist"),
+      path.join(__dirname, "public"),
+    ],
     historyApiFallback: true,
     port: 3000,
     open: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
+      // ⚛️ SVGs como Componentes React e como imagem
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: { exportType: 'named' },
+          },
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'imgs/[name].[hash].[ext]',
+              esModule: false,
+            },
+          },
+        ],
       },
+      // 🖼️ Imagens estáticas (exceto SVG)
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'imgs/[name].[hash].[ext]',
+              esModule: false,
+            },
+          },
+        ],
+      },
+      // 🔥 JS / JSX
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
+      // 🎨 Sass Modules (.module.sass)
       {
         test: /\.module\.sass$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-              modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-              },
+              modules: true,
               esModule: false,
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              implementation: require('sass'),
+              implementation: require("sass"),
               sassOptions: {
                 indentedSyntax: true,
               },
@@ -54,6 +87,7 @@ module.exports = {
           },
         ],
       },
+      // 🎨 Sass Global (.sass)
       {
         test: /\.sass$/i,
         exclude: /\.module\.sass$/i,
@@ -61,9 +95,9 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              implementation: require('sass'),
+              implementation: require("sass"),
               sassOptions: {
                 indentedSyntax: true,
               },
@@ -71,21 +105,28 @@ module.exports = {
           },
         ],
       },
+      // 🎨 CSS
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'imgs/[name][hash][ext]',
-        },
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            ignore: ["**/index.html"],
+          },
+          noErrorOnMissing: true,
+        },
+      ],
     }),
   ],
 };
