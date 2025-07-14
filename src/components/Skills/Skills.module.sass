@@ -1,0 +1,100 @@
+@use '../../styles/variables'
+@use '../../styles/mixin'
+
+.containerSkills
+    width: 100%
+    height: auto
+    min-height: 80vh
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    h3
+        margin-top: 60px
+        font-family: variables.$fontOpenSans
+        font-weight: 700
+        font-size: 1.5rem
+
+.tituloSubtitulo
+    text-align: center
+
+    h2
+        @include mixin.tituloEstilizado
+
+        span
+            display: inline-block
+            position: relative
+            padding-bottom: 12px
+            @include mixin.gradientTexto
+
+    p
+        @include mixin.paragrafoEstilizado
+
+.hardSkills
+    text-align: center
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    width: 100%
+    justify-content: center
+
+.cardIcon
+    background: variables.$fundoCards
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    padding: 35px 20px
+    border-radius: 12px
+    min-width: 140px
+    min-height: 100px
+    text-align: center
+    gap: 10px
+
+    svg
+        width: 50px
+        height: 50px
+
+    p
+        font-family: variables.$fontPoppins
+        font-weight: 700
+        margin-top: 8px
+
+.softSkills
+    display: inline-flex
+    flex-wrap: wrap
+    gap: 20px
+    flex-direction: row
+    margin-bottom: 60px
+
+.cardSoftSkills
+    background: variables.$fundoCards
+    width: 25%
+    padding: 20px
+    border-radius: 12px
+    display: flex
+    flex-direction: column
+    gap: 12px
+    color: white
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+
+.headerSoftSkill
+    display: flex
+    align-items: center
+    gap: 12px
+
+    svg
+        width: 40px
+        height: 40px
+       
+    h3
+        font-family: variables.$fontPoppins
+        font-size: 1.1rem
+        margin: 0
+
+.cardSoftSkills p
+    font-family: variables.$fontOpenSans
+    font-size: 0.95rem
+    line-height: 1.6
+    margin: 0
+    color: #d1d5db
