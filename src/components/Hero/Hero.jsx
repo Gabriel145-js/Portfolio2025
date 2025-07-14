@@ -22,11 +22,15 @@ const Hero = () => {
                 </article>
 
                 <div className={styles.imgHero}>
+
+                    
                     <DotLottieReact
                         src="https://lottie.host/382a8135-1713-41f7-ac4c-8826af206243/dK5geFtljW.lottie"
                         loop
                         autoplay
                     />
+                
+
                  
 
                 </div>

@@ -1,4 +1,5 @@
 @use '../../styles/variables'
+@use '../../styles/mixin'
 
 .container_heroSection
     width: 100%
@@ -41,11 +42,8 @@
 .gradientNome
     font-family: variables.$fontMontserrat
     margin: 0
-    background-image: linear-gradient(156deg, rgba(61, 129, 246, 1) 59%, rgba(137, 93, 246, 1) 100%)
-    background-clip: text
-    -webkit-background-clip: text
-    color: transparent
-    -webkit-text-fill-color: transparent
+    @include mixin.gradientTexto
+    
 
 .imgHero
     
@@ -67,10 +65,9 @@
         font-weight: 700
 
 .btnProjetos
-    background: #3D7AF4
-    background: linear-gradient(156deg, rgba(61, 122, 244, 1) 59%, rgba(78, 74, 230, 1) 100%)
     border: none
-
+    @include mixin.btnsBackgroud
+    
 .btnContact
     background: transparent
     border: 2px solid #3D7AF4
