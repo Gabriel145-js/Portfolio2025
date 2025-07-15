@@ -10,6 +10,8 @@ import { ReactComponent as GitIcon } from '../../icons/gitIcon.svg'
 import { ReactComponent as FirebaseIcon } from '../../icons/firebaseIcon.svg'
 import { ReactComponent as EquipeIcon } from '../../icons/softIcons/equipeIcon.svg'
 import { ReactComponent as ResolucaoIcon } from '../../icons/softIcons/resolucaoIcon.svg'
+import { ReactComponent as BalaoIcon } from '../../icons/softIcons/balaoIcon.svg'
+import { ReactComponent as ClockIcon } from '../../icons/softIcons/clockIcon.svg'
 import CardHardSkills from './CardHardSkills'
 import CardSoftSkills from './CardSoftSkills'
 
@@ -24,42 +26,42 @@ const Skills = () => {
             <section className={styles.hardSkills}>
 
                 <CardHardSkills
-                    icon=<JsIcon />
+                    icon=<JsIcon/>
                     nomeTec='JavaScript'
                 />
 
                 <CardHardSkills
-                    icon=<ReactIcon />
+                    icon=<ReactIcon/>
                     nomeTec='React'
                 />
 
                 <CardHardSkills
-                    icon=<HtmlIcon />
+                    icon=<HtmlIcon/>
                     nomeTec='HTML5'
                 />
 
                 <CardHardSkills
-                    icon=<CssIcon />
+                    icon=<CssIcon/>
                     nomeTec='CSS3'
                 />
 
                 <CardHardSkills
-                    icon=<SassIcon />
+                    icon=<SassIcon/>
                     nomeTec='Sass'
                 />
 
                 <CardHardSkills
-                    icon=<NodeIcon />
+                    icon=<NodeIcon/>
                     nomeTec='Node-Js'
                 />
 
                 <CardHardSkills
-                    icon=<GitIcon />
+                    icon=<GitIcon/>
                     nomeTec='Git'
                 />
 
                 <CardHardSkills
-                    icon=<FirebaseIcon />
+                    icon=<FirebaseIcon/>
                     nomeTec='Firebase'
                 />
 
@@ -81,6 +83,18 @@ const Skills = () => {
               icon= <ResolucaoIcon/>
               titSkill = 'Resolução de problemas'
               descriSKill= 'Habilidade analítica para identificar e resolver desafios complexos de forma criativa.'
+              />
+
+              <CardSoftSkills
+              icon= <BalaoIcon/>
+              titSkill = 'Comunicação'
+              descriSKill= 'Clareza na comunicação técnica e interpessoal com diferentes públicos..'
+              />
+
+              <CardSoftSkills
+              icon= <ClockIcon/>
+              titSkill = 'Gestão de tempo'
+              descriSKill= 'Organização e priorização eficiente de tarefas para cumprir prazos com qualidade.'
               />
 
             </section>
