@@ -2,11 +2,15 @@ import React from 'react'
 import styles from './Projetos.module.sass'
 import { ReactComponent as IconGitHub } from '../../icons/githubIcon.svg'
 import CardsProjetos from './CardsProjetos'
+import useInView from '../../hooks/useInView'
+
 
 const Projetos = () => {
+    const [ref, isInView] = useInView({ threshold: 0.3 })
+
     return (
-        <div className={styles.containerProjetos}>
-            <div className={styles.tituloSubtitulo}>
+        <div ref={ref} className={styles.containerProjetos}>
+            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
                 <h2>Meus <span>Projetos</span></h2>
                 <p>Alguns dos projetos que desenvolvi, mostrando minha evolução e habilidades.</p>
 

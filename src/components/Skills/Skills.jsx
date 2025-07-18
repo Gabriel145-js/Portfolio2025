@@ -14,11 +14,15 @@ import { ReactComponent as BalaoIcon } from '../../icons/softIcons/balaoIcon.svg
 import { ReactComponent as ClockIcon } from '../../icons/softIcons/clockIcon.svg'
 import CardHardSkills from './CardHardSkills'
 import CardSoftSkills from './CardSoftSkills'
+import useInView from '../../hooks/useInView'
+
 
 const Skills = () => {
+    const [ref, isInView] = useInView({ threshold: 0.3 })
+
     return (
-        <div className={styles.containerSkills}>
-            <div className={styles.tituloSubtitulo}>
+        <div ref={ref} className={styles.containerSkills}>
+            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
                 <h2>Minhas <span>Skills</span></h2>
                 <p>Tecnologias e ferramentas que domino e utilizo no meu dia a dia como desenvolvedor.</p>
             </div>
