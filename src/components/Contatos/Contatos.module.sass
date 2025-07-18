@@ -1,0 +1,189 @@
+@use '../../styles/variables'
+@use '../../styles/mixin'
+@use '../../styles/animation'
+
+.containerContatos
+    width: 100%
+    min-height: 80vh
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    align-items: center
+    margin-bottom: 60px
+
+.tituloSubtitulo
+    text-align: center
+    margin-bottom: 2rem
+    opacity: 0
+
+    h2
+        @include mixin.tituloEstilizado
+
+        span
+            @include mixin.gradientTexto
+
+    p
+        @include mixin.paragrafoEstilizado
+
+.sectionCtts
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 2rem
+    width: 100%
+    max-width: 1200px
+    margin-top: 40px
+    
+    
+
+.containerForm
+    flex: 1 1 50%
+    display: flex
+    justify-content: center
+
+.cardCtts
+    flex: 1 1 40%
+    background: variables.$fundoCards
+    border-radius: variables.$radiusFora
+    padding: 2rem
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+    opacity: 0
+
+
+    h3
+        font-family: variables.$fontPoppins
+        font-size: 1.3rem
+        margin-bottom: 1rem
+
+.itemInfo
+    display: flex
+    align-items: flex-start
+    margin-bottom: 1.5rem
+    line-height: 1.2rem
+    
+    svg
+        width: 40px
+        height: 35px
+        margin-right: 1rem
+        color: #555
+
+    p
+        font-weight: bold
+        font-family: variables.$fontOpenSans
+        margin: 0
+
+    span, a
+        line-height: 2
+        font-family: variables.$fontOpenSans
+        color: variables.$colorDescricao
+        font-size: 0.95rem
+
+.redesSociais
+    margin-top: 2rem
+
+    h3
+        font-family: variables.$fontPoppins
+        font-size: 1.2rem
+        margin-bottom: 1rem
+
+.iconesRedes
+    display: flex
+    justify-content: flex-start
+    gap: 1rem
+
+    a
+        display: flex
+        align-items: center
+        justify-content: center
+
+    svg
+        width: 35px
+        height: 35px
+        color: #374151
+        transition: color 0.3s ease
+
+.wppLink svg:hover
+    color: #075E54 
+    transition: color 0.3s ease
+
+.linkedinLink svg:hover
+    color: #0A66C2
+    transition: color 0.3s ease
+
+.githubLink svg:hover
+    color:#3333338d
+    transition: color 0.3s ease
+
+
+.formContact
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: auto
+    opacity: 0
+
+
+    label
+        margin-bottom: 0.5rem
+        font-family: variables.$fontOpenSans
+
+    input, textarea
+        margin-bottom: 1rem
+        padding: 0.75rem
+        border-radius: 5px
+        border: 1px solid #cccccc63
+        background: #1F2937
+        font-size: 1rem
+        color: #fff
+
+    textarea
+        resize: vertical
+        min-height: 160px
+        max-height: 400px
+
+    button
+        padding: 0.75rem 1rem
+        @include mixin.btnsBackgroud
+        color: #fff
+        border: none
+        border-radius: 5px
+        font-weight: bold
+        cursor: pointer
+
+    input::placeholder,
+    textarea::placeholder
+        color: variables.$colorDescricao
+        font-family: variables.$fontOpenSans
+        font-size: 0.9rem
+
+.rowInputs
+    display: flex
+    gap: 1rem
+    flex-wrap: wrap
+
+.inputWrapper
+    flex: 1 1 48%
+    display: flex
+    flex-direction: column
+
+.tracking
+    animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+
+.slideLeft
+    animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.slideRight
+    animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+
+@media (max-width: 1000px)
+    .sectionCtts
+        width: 90%
+
+@media (max-width: 500px)
+    .sectionCtts
+        width: 90%
+    
+    .cardCtts
+        padding: 1rem
+   
