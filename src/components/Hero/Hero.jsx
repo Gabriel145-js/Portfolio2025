@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Hero.module.sass'
+import { scroller } from 'react-scroll';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 
@@ -16,23 +17,42 @@ const Hero = () => {
 
                     <div className={styles.btnsHero}>
 
-                        <button className={styles.btnProjetos}>Ver projetos</button>
-                        <button className={styles.btnContact}>Contate-me</button>
+
+                        <button
+                            className={styles.btnProjetos}
+                            onClick={() =>
+                                scroller.scrollTo('projetos', {
+                                    duration: 100,
+                                    delay: 0,
+                                    smooth: 'easeInOutQuart',
+                                })
+                            }
+                        >
+                            Ver projetos
+                        </button>
+
+                        <button className={styles.btnContact}  onClick={() =>
+                                scroller.scrollTo('contatos', {
+                                    duration: 100,
+                                    delay: 0,
+                                    smooth: 'easeInOutQuart',
+                                })
+                            }>Contate-me</button>
                     </div>
                 </article>
 
                 <div className={styles.imgHero}>
 
-                    
+
                     <DotLottieReact
                         src="https://lottie.host/382a8135-1713-41f7-ac4c-8826af206243/dK5geFtljW.lottie"
                         loop
                         autoplay
                         className={styles.svgHero}
                     />
-                
 
-                 
+
+
 
                 </div>
             </div>
