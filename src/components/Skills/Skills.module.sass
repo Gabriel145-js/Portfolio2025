@@ -1,5 +1,6 @@
 @use '../../styles/variables'
 @use '../../styles/mixin'
+@use '../../styles/animation'
 
 .containerSkills
     width: 100%
@@ -17,6 +18,7 @@
 
 .tituloSubtitulo
     text-align: center
+    opacity: 0
 
     h2
         @include mixin.tituloEstilizado
@@ -50,6 +52,8 @@
     min-height: 100px
     text-align: center
     gap: 10px
+    opacity: 0
+   
 
     svg
         width: 50px
@@ -75,9 +79,12 @@
     border-radius: 12px
     display: flex
     flex-direction: column
+    flex-wrap: wrap
     gap: 12px
     color: white
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+    opacity: 0
+
 
 .headerSoftSkill
     display: flex
@@ -100,3 +107,25 @@
     line-height: 1.6
     margin: 0
     color: #d1d5db
+
+.scaleTopSoft
+    animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.fadeIn
+    animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+
+.scaleTop
+    animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+
+@media (max-width: 1000px)
+    .cardSoftSkills
+        width: 30%
+
+@media (max-width: 500px)
+    .cardIcon
+        padding: 10px 4px
+
+@media (max-width: 600px)
+    .cardSoftSkills
+        width: 80%

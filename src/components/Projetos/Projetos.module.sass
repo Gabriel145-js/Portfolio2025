@@ -1,5 +1,6 @@
 @use '../../styles/variables'
 @use '../../styles/mixin'
+@use '../../styles/animation'
 
 .containerProjetos
     width: 100%
@@ -12,6 +13,8 @@
 
 .tituloSubtitulo
     text-align: center
+    opacity: 0
+
 
     h2
         @include mixin.tituloEstilizado
@@ -34,6 +37,7 @@
     min-height: 20vh
     margin-top: 40px
     margin-bottom: 60px
+    gap: 10px
 
 .cardProjeto
     display: flex
@@ -46,6 +50,8 @@
     width: 30%
     border-radius: variables.$radiusFora
     background: variables.$colorCardProjetos
+    opacity: 0
+
 
 .imgCard
     position: relative
@@ -62,7 +68,6 @@
 
 .tecnologias
     position: absolute
-
     bottom: 5px
     left: 10px
     display: flex
@@ -122,3 +127,28 @@
 .svgIcon svg
     color: #6B7280
     width: 24px
+
+
+
+.fadeIn
+    animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+
+.scaleTop
+    animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+
+@media (max-width: 1300px)
+    .cardProjeto
+        width: 45%
+        margin-top: 10px
+
+@media (max-width: 900px)
+    .cardProjeto
+        width: 80%
+        margin-top: 10px
+
+
+@media (max-width: 500px)
+    .cardProjeto
+        margin-top: 10px
+        width: 100%

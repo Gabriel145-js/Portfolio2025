@@ -1,17 +1,77 @@
 @use '../../styles/variables'
-    
+@use '../../styles/mixin'
+@use '../../styles/animation'
+
 .container
     display: flex
     justify-content: center
     align-items: center
-    margin-top: 10px   
-    
+    width: 100%
+    z-index: 99999
+    position: fixed
+
 .navbar
+    margin-top: 10px
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: space-between
     background-color: variables.$contrasteBackgorud
-    padding: 30px
-    width: 95%
+    width: 98%
     border-radius: variables.$radiusFora
- 
+    z-index: 9999999999
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 95px
+    background: #111827
+    z-index: 998
+    pointer-events: none
+
+.logoNavbar
+    font-family: variables.$fontOpenSans
+    font-size: 1.2rem
+    margin-left: 20px
+    letter-spacing: 2px
+
+    h3 span
+        @include mixin.gradientTexto
+
+.navLinks
+    display: inline-flex
+    gap: 20px
+    margin-right: 20px
+
+    a
+        font-family: variables.$fontPoppins
+        font-size: 1rem
+        text-decoration: none
+        color: #fff
+        letter-spacing: 1px
+        cursor: pointer
+        position: relative
+        transition: all 0.3s ease 
+
+        &:hover
+            transform: translateY(-2px) 
+            color: #f0f0f0 
+
+    .active
+        @include mixin.gradientTexto
+        font-weight: bold
+
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            bottom: -5px
+            left: 0
+            height: 5px
+            width: 100%
+            background-image: linear-gradient(156deg, rgba(61, 129, 246, 1), rgba(137, 93, 246, 1))
+            border-radius: 10px
+            animation: stretchAnimation 2s ease-in-out infinite 
+
+

@@ -1,0 +1,34 @@
+@use '../../styles/mixin'
+@use '../../styles/variables'
+
+.containerFooter
+    width: 100%
+    height: auto
+    min-height: 20vh
+    background: #1F2937
+    display: flex
+    flex-direction: column
+    justify-content: center
+    
+.logoFooter
+    position: relative
+    margin-left: 40px
+
+    h3
+        font-family: variables.$fontOpenSans
+        font-size: 1.9rem
+        margin-bottom: 0
+
+        span
+            @include mixin.gradientTexto
+            
+    p
+        font-size: 0.9rem
+        font-family: variables.$fontOpenSans
+        color: variables.$colorDescricao
+
+.copyFooter
+    text-align: center
+    font-size: 1rem
+    font-family: variables.$fontOpenSans
+    color: variables.$colorDescricao

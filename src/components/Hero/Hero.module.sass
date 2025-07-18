@@ -1,5 +1,6 @@
 @use '../../styles/variables'
 @use '../../styles/mixin'
+@use '../../styles/animation'
 
 .container_heroSection
     width: 100%
@@ -7,37 +8,49 @@
 .hero
     display: flex
     justify-content: space-around
+    flex-wrap: wrap
     align-items: center
     gap: 10px
     z-index: 999
     height: auto
     min-height: 80vh
     padding: 16px 16px
+    
 
 .aboutHero
     width: 40%
     display: flex
     flex-direction: column
     justify-content: center
+    flex-wrap: wrap
+    animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+    
 
     h1
         font-family: variables.$fontPoppins
-        font-size: 3.5rem
+        font-size: clamp(2.2rem, 4vw, 3.5rem)
         margin: 0
+        line-height: 1.2
 
     h2
         color: #fff
-        font-family: variables.$fontPoppins
+        font-size: clamp(1.2rem, 4vw, 2rem)
+        font-family: variables.$fontMontserrat
         margin: 0
+        line-height: 2
+        
 
         .variavel
             margin-left: 8px
             font-family: variables.$fontPoppins
-            font-weight: 500
+
             animation: fade 0.5s ease-in-out
 
     .descricaoHero
         font-family: variables.$fontOpenSans
+        line-height: 1.8
+        color: variables.$colorDescricao
 
 .gradientNome
     font-family: variables.$fontMontserrat
@@ -46,10 +59,16 @@
     
 
 .imgHero
-    
+    display: flex
+    justify-content: center
+    align-items: center
     width: 40%
     height: 40%
+    animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
+.svgHero
+    width: 100%
+    min-width: 700px
 
 .btnsHero
     display: inline-flex
@@ -59,7 +78,7 @@
     button
         border-radius: 6px
         color: #fff
-        padding: 10px
+        padding: 12px 18px
         cursor: pointer
         font-family: variables.$fontPoppins
         font-weight: 700
@@ -82,18 +101,34 @@
     animation: acenar 2s infinite
     transform-origin: 70% 70%
 
-@keyframes acenar
-    0%
-        transform: rotate(0deg)
-    10%
-        transform: rotate(14deg)
-    20%
-        transform: rotate(-8deg)
-    30%
-        transform: rotate(14deg)
-    40%
-        transform: rotate(-4deg)
-    50%
-        transform: rotate(10deg)
-    60%, 100%
-        transform: rotate(0deg)
+
+@media (max-width: 900px)
+    .hero
+        margin-top: 40px
+
+    .aboutHero, .imgHero
+        width: 100%
+        text-align: center
+
+
+    .imgHero
+        margin-top: 2rem
+
+    .svgHero
+        min-width: 600px
+
+    .btnsHero
+        display: flex
+        justify-content: center
+
+@media (max-width: 500px)
+
+
+    .aboutHero, .imgHero
+        width: 100%
+        text-align: left
+
+
+    .btnsHero
+        display: flex
+        justify-content: flex-start
