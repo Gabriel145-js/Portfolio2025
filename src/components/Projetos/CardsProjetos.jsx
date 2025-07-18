@@ -42,9 +42,9 @@ const CardsProjetos = ({
 
 
             <div className={styles.utilsBtns}>
-                <a href={urlDetalhes}>Ver detalhes</a>
-                <a href={urlProjeto} target='blank'>Ir para o Projeto</a>
-                {urlGitHub && <a href={urlGitHub} className={styles.svgIcon}><IconGitHub /></a>}
+                <a href={urlDetalhes} target='_blank'>Ver detalhes</a>
+                <a href={urlProjeto} target='_blank'>Ir para o Projeto</a>
+                {urlGitHub && <a href={urlGitHub} className={styles.svgIcon} target='_blank'><IconGitHub /></a>}
             </div>
 
 

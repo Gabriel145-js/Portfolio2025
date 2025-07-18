@@ -59,9 +59,12 @@ const About = () => {
           </div>
 
           <div className={styles.buttons}>
-            <a href=""><IconGithub /> GitHub</a>
+            <a href="https://github.com/Gabriel145-js" target='_blank'><IconGithub /> GitHub</a>
             <a href=""><IconLinkedin /> Linkedin</a>
-            <a href=""><IconCurriculo /> Curriculo</a>
+            <a href="" download="Curriculo-GabrielZaparolli.pdf">
+              Baixar Currículo
+            </a>
+
           </div>
         </div>
       </div>
