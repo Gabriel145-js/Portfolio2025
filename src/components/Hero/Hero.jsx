@@ -7,27 +7,41 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 const Hero = () => {
     const adjetivos = ['Web', 'Front-End', 'Back-End', 'Full-Stack']
     const [index, setIndex] = useState(0)
+const [showText, setShowText] = useState(false)
 
     useEffect(() => {
-        const intervalo = setInterval(() => {
-            setIndex(prev => (prev + 1) % adjetivos.length)
-        }, 4000)
+        // Ativa animação apos o tempo da entrada
+        const delay = setTimeout(() => {
+            setShowText(true)
 
-        return () => clearInterval(intervalo)
+            const intervalo = setInterval(() => {
+                setIndex(prev => (prev + 1) % adjetivos.length)
+            }, 2000)
+
+            return () => clearInterval(intervalo)
+        }, 700)
+
+        return () => clearTimeout(delay)
     }, [])
 
     return (
         <section className={styles.container_heroSection}>
             <div className={styles.hero}>
                 <article className={styles.aboutHero}>
-                    <h1>Olá, eu sou <br /><span className={styles.gradientNome}>Gabriel Zaparolli</span> <span className={styles.wave}>👋</span></h1>
-                    <h2 className={styles.anima}>
-                        Desenvolvedor{' '}
-                        <span key={index} className={styles.trocaAdjetivo}>
-                            {adjetivos[index]}
-                            
-                        </span>
-                    </h2>
+                    <h1>
+                        Olá, eu sou <br />
+                        <span className={styles.gradientNome}>Gabriel Zaparolli</span>{' '}
+                        <span className={styles.wave}>👋</span>
+                    </h1>
+
+                    {/* Só exibe após o tempo de delay */}
+                   
+                        <h2 className={styles.anima}>
+                            Desenvolvedor{' '}
+                             {showText && (<span key={index} className={styles.trocaAdjetivo}>
+                                {adjetivos[index]}
+                            </span>)}
+                        </h2>
 
 
                     <p className={styles.descricaoHero}>Transformo ideias em realidade digital com código limpo e designs impactantes. Especializado em criar experiências web modernas e responsivas.</p>
