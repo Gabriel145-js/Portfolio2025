@@ -11,4 +11,14 @@ html, body
 .conteudo
     padding-top: 90px
 
-    
+@media (max-width: 1000px)
+    a:hover,
+    button:hover,
+    div:hover,
+    span:hover,
+    svg:hover
+        pointer-events: auto // mantém interações normais
+        transform: none !important
+        transition: none !important
+        filter: none !important
+        text-decoration: none !important
