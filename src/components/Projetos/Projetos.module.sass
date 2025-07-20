@@ -38,6 +38,7 @@
     margin-top: 40px
     margin-bottom: 60px
     gap: 10px
+    opacity: 0
 
 .cardProjeto
     display: flex
@@ -50,8 +51,10 @@
     width: 30%
     border-radius: variables.$radiusFora
     background: variables.$colorCardProjetos
-    opacity: 0
+    transition: transform 0.2s ease-in-out
 
+    &:hover 
+        transform: scale(1.06)
 
 .imgCard
     position: relative
@@ -119,6 +122,8 @@
     a:nth-child(1),
     a:nth-child(2)
         background: #1E3A8A
+        @include mixin.hoverBtns
+        
 
     a:last-child
         margin-left: auto
