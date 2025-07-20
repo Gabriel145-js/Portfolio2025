@@ -15,7 +15,6 @@
     height: auto
     min-height: 80vh
     padding: 16px 16px
-    
 
 .aboutHero
     width: 40%
@@ -23,9 +22,7 @@
     flex-direction: column
     justify-content: center
     flex-wrap: wrap
-    animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    
-    
+    animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
     h1
         font-family: variables.$fontPoppins
@@ -39,7 +36,6 @@
         font-family: variables.$fontMontserrat
         margin: 0
         line-height: 2
-        
 
         .variavel
             margin-left: 8px
@@ -56,7 +52,6 @@
     font-family: variables.$fontMontserrat
     margin: 0
     @include mixin.gradientTexto
-    
 
 .imgHero
     display: flex
@@ -64,7 +59,7 @@
     align-items: center
     width: 40%
     height: 40%
-    animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
 .svgHero
     width: 100%
@@ -86,7 +81,7 @@
 .btnProjetos
     border: none
     @include mixin.btnsBackgroud
-    
+
 .btnContact
     background: transparent
     border: 2px solid #3D7AF4
@@ -101,16 +96,13 @@
     animation: acenar 2s infinite
     transform-origin: 70% 70%
 
-
 @media (max-width: 900px)
     .hero
         margin-top: 40px
 
-    
     .aboutHero, .imgHero
         width: 100%
         text-align: center
-
 
     .imgHero
         margin-top: 2rem
@@ -124,12 +116,21 @@
 
 @media (max-width: 500px)
 
-
     .aboutHero, .imgHero
         width: 100%
         text-align: left
 
-
     .btnsHero
         display: flex
         justify-content: flex-start
+
+.trocaAdjetivo
+    position: relative
+    display: inline-block
+    overflow: hidden
+    white-space: nowrap
+    vertical-align: bottom
+    @include mixin.gradientTexto
+    
+    animation: escrita 1s steps(20, end) forwards, apagando 1.2s steps(20, end) 2s forwards 
+
