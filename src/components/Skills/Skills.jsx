@@ -21,13 +21,13 @@ const Skills = () => {
     const [ref, isInView] = useInView({ threshold: 0.3 })
 
     return (
-        <div ref={ref} className={styles.containerSkills}>
+        <div ref={ref} className={styles.containerSkills} >
             <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
                 <h2>Minhas <span>Skills</span></h2>
                 <p>Tecnologias e ferramentas que domino e utilizo no meu dia a dia como desenvolvedor.</p>
             </div>
-            <h3>Hard Skills</h3>
-            <section className={styles.hardSkills}>
+            <span className={`${styles.titSkill} ${isInView ? styles.scaleTop : ''}`}><h3>Hard Skills</h3></span>
+            <section ref={ref} className={`${styles.hardSkills} ${isInView ? styles.scaleTop : ''}`}>
 
                 <CardHardSkills
                     icon=<JsIcon/>
@@ -74,8 +74,8 @@ const Skills = () => {
 
             </section>
 
-            <h3>Soft Skills</h3>
-            <section className={styles.softSkills}>
+             <span className={`${styles.titSkill} ${isInView ? styles.scaleTop : ''}`}><h3>Soft Skills</h3></span>
+            <section ref={ref} className={`${styles.softSkills} ${isInView ? styles.scaleTopSoft : ''}`}>
 
               <CardSoftSkills
               icon= <EquipeIcon/>
