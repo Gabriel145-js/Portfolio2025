@@ -16,7 +16,7 @@ const Projetos = () => {
 
             </div>
 
-            <section className={styles.containerCardsProjetos}>
+            <section ref={ref} className={`${styles.containerCardsProjetos} ${isInView ? styles.scaleTop : ''}`}>
                 <CardsProjetos
                     imgProjeto='img/imgsProjetos/mussattoProject.png'
                     tecnologias={[

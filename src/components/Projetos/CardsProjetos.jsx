@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Projetos.module.sass'
 import { ReactComponent as IconGitHub } from '../../icons/githubIcon.svg'
-import useInView from '../../hooks/useInView'
 
 
 const CardsProjetos = ({
@@ -14,9 +13,8 @@ const CardsProjetos = ({
     urlGitHub
 }) => {
 
-     const [ref, isInView] = useInView({ threshold: 0.3 })
     return (
-        <div ref={ref} className={`${styles.cardProjeto} ${isInView ? styles.scaleTop : ''}`}>
+        <div className={styles.cardProjeto}>
             <div className={styles.imgCard}>
                 <div className={styles.tecnologias}>
                     {tecnologias.map((tec, index) => (

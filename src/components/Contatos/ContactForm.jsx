@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import styles from './Contatos.module.sass'
+import styles from './Contatos.module.sass';
 import useInView from '../../hooks/useInView';
-
 
 function ContactForm() {
   const [ref, isInView] = useInView({ threshold: 0.3 })
   const [state, handleSubmit] = useForm("xyzpybga")
+  const [showForm, setShowForm] = useState(true)
+  const [showThanks, setShowThanks] = useState(false)
 
-  if (state.succeeded) {
-    return <p>Obrigado pela mensagem!</p>;
+  //retorna o formulario apos 5s apos a mensagem de agradecimento
+  useEffect(() => {
+    if (state.succeeded) {
+      setShowForm(false) 
+      setShowThanks(true)
+    
+      const timer = setTimeout(() => {
+        setShowThanks(false)
+        setShowForm(true)
+      }, 5000);
+
+      return () => clearTimeout(timer)
+    }
+  }, [state.succeeded])
+
+  if (showThanks) {
+    return <p className={styles.agradecimentoMsg}>Obrigado pela mensagem! ✅</p>
   }
 
-  // ...
+  if (!showForm) {
+    return null 
+  }
 
   return (
-    <form ref={ref} onSubmit={handleSubmit} className={`${styles.formContact} ${isInView ? styles.slideLeft : ''}`} >
+    <form
+      ref={ref}
+      onSubmit={handleSubmit}
+      className={`${styles.formContact} ${isInView ? styles.slideLeft : ''}`}
+    >
       {/* Linha com Nome e Email */}
       <div className={styles.rowInputs}>
         <div className={styles.inputWrapper}>
@@ -51,14 +73,13 @@ function ContactForm() {
         </div>
       </div>
 
-
       {/* Assunto */}
       <label htmlFor="subject">Assunto</label>
       <input
         id="subject"
         type="text"
         name="subject"
-        placeholder='Qual o seu assunto?'
+        placeholder="Qual o seu assunto?"
         required
       />
       <ValidationError
@@ -72,7 +93,7 @@ function ContactForm() {
       <textarea
         id="message"
         name="message"
-        placeholder='Sua mensagem...'
+        placeholder="Sua mensagem..."
         required
       />
       <ValidationError
@@ -86,7 +107,6 @@ function ContactForm() {
       </button>
     </form>
   );
-
 }
 
 export default ContactForm;
