@@ -15,6 +15,7 @@ const Navbar = () => {
             setIsMobile(window.innerWidth <= 900)
             if (window.innerWidth > 900) {
                 setIsMenuOpen(false)
+                setIsAnimatingClose(false)
             }
         }
 
@@ -65,20 +66,37 @@ const Navbar = () => {
 
     const toggleMenu = () => {
         if (isMenuOpen) {
+            // Inicia animação de fechamento
             setIsAnimatingClose(true)
             setTimeout(() => {
                 setIsMenuOpen(false)
                 setIsAnimatingClose(false)
             }, 300) // tempo da animação de fechamento
         } else {
+            // Abre o menu
             setIsMenuOpen(true)
+            setIsAnimatingClose(false)
         }
     }
 
     const handleLinkClick = () => {
-        toggleMenu()
+        if (isMenuOpen && !isAnimatingClose) {
+            toggleMenu()
+        }
     }
 
+    // Função para determinar as classes do menu mobile
+    const getMobileMenuClasses = () => {
+        let classes = styles.mobileMenu
+        
+        if (isAnimatingClose) {
+            classes += ` ${styles.mobileMenuClosing}`
+        } else if (isMenuOpen) {
+            classes += ` ${styles.mobileMenuOpen}`
+        }
+        
+        return classes
+    }
 
     return (
         <div className={styles.container}>
@@ -94,7 +112,7 @@ const Navbar = () => {
                         <div className={styles.hamburgerIcon} onClick={toggleMenu}>
                             <IconMenu />
                         </div>
-                        <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
+                        <div className={getMobileMenuClasses()}>
                             <Link
                                 to="inicio"
                                 smooth={true}

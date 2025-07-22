@@ -104,7 +104,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
     display: none
     flex-direction: column
-    animation: scale-in-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
     a
         display: block
@@ -121,7 +120,6 @@
         &:hover
             background-color: rgba(255, 255, 255, 0.1)
 
-
         &:last-child
             border-bottom: none
 
@@ -129,11 +127,18 @@
         @include mixin.gradientTexto
         font-weight: bold
         background-color: rgba(255, 255, 255, 0.05)
-      
 
 .mobileMenuOpen
     transform: translateY(0)
     display: flex
+    animation: scale-in-tr 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.mobileMenuClosing
+    transform: translateY(-100%)
+    display: flex
+    animation: scale-in-tr-rv 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both
+
+// Animações
 
 // Media queries para responsividade
 @media (max-width: 900px)
@@ -145,7 +150,6 @@
 
     .mobileMenu
         top: 90px
-        
 
     .hamburgerIcon
         display: block
@@ -153,7 +157,6 @@
     .logoNavbar
         font-size: 1.1rem
         margin-left: 15px
-
 
 // Melhorias para telas menores
 @media (max-width: 600px)
@@ -173,6 +176,9 @@
         &.mobileMenuOpen
             display: flex
 
+        &.mobileMenuClosing
+            display: flex
+
         a
             font-size: 1rem
             padding: 18px 25px
@@ -183,6 +189,9 @@
         svg
             width: 22px
             height: 22px
+        
+    .fadeIn
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 
 @media (max-width: 480px)
     .navbar
@@ -200,6 +209,9 @@
         width: 95%
 
         &.mobileMenuOpen
+            display: flex
+
+        &.mobileMenuClosing
             display: flex
 
         a
