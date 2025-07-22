@@ -53,6 +53,25 @@
     margin: 0
     @include mixin.gradientTexto
 
+.trocaAdjetivo
+    position: relative
+    display: inline-block
+    overflow: hidden
+    white-space: nowrap
+    vertical-align: bottom
+    @include mixin.gradientTexto
+    animation: escrita 1s steps(20, end) forwards, apagando 1.2s steps(20, end) 2s forwards 
+
+.trocaAdjetivo
+    position: relative
+    display: inline-block
+    overflow: hidden
+    white-space: nowrap
+    vertical-align: bottom
+    @include mixin.gradientTexto
+    animation: escrita 1s steps(20, end) forwards, apagando 1.2s steps(20, end) 2s forwards 
+
+
 .imgHero
     display: flex
     justify-content: center
@@ -123,14 +142,3 @@
     .btnsHero
         display: flex
         justify-content: flex-start
-
-.trocaAdjetivo
-    position: relative
-    display: inline-block
-    overflow: hidden
-    white-space: nowrap
-    vertical-align: bottom
-    @include mixin.gradientTexto
-    
-    animation: escrita 1s steps(20, end) forwards, apagando 1.2s steps(20, end) 2s forwards 
-

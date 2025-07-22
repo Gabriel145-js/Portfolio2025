@@ -10,7 +10,7 @@ const Projetos = () => {
 
     return (
         <div ref={ref} className={styles.containerProjetos}>
-            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
+            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.tracking : ''}`}>
                 <h2>Meus <span>Projetos</span></h2>
                 <p>Alguns dos projetos que desenvolvi, mostrando minha evolução e habilidades.</p>
 

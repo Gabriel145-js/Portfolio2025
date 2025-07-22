@@ -76,6 +76,7 @@
     flex-direction: row
     margin-bottom: 60px
     opacity: 0
+    
 
 
 .cardSoftSkills
@@ -90,6 +91,7 @@
     color: white
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
     @include mixin.scaleYCards
+   
 
 .headerSoftSkill
     display: flex
@@ -116,7 +118,7 @@
 .scaleTopSoft
     animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
-.fadeIn
+.tracking
     animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 
 .scaleTop
@@ -133,3 +135,6 @@
 @media (max-width: 600px)
     .cardSoftSkills
         width: 80%
+
+    .tracking
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both

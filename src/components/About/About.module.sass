@@ -26,6 +26,7 @@
 
     p
         @include mixin.paragrafoEstilizado
+        
 
 .about
     display: flex
@@ -135,7 +136,7 @@
         fill: #fff
         stroke: #fff
 
-.fadeIn
+.tracking
     animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 
 .scaleIn
@@ -207,3 +208,7 @@
             margin: 0
             padding: 0
             text-align: left
+
+@media (max-width: 600px)
+    .tracking
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both

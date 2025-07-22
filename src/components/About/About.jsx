@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <section ref={ref} className={styles.containerAbout}>
-      <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
+      <div className={`${styles.tituloSubtitulo} ${isInView ? styles.tracking : ''}`}>
         <h2>Sobre <span>Mim</span></h2>
         <p>Um apaixonado por tecnologia e desenvolvimento web, sempre buscando aprender e criar soluções inovadoras.</p>
       </div>

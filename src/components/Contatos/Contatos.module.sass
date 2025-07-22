@@ -176,9 +176,10 @@
     display: flex
     flex-direction: column
 
+
 .tracking
     animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
-
+    
 .slideLeft
     animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
@@ -196,4 +197,9 @@
     
     .cardCtts
         padding: 1rem
+
+@media (max-width: 600px)
+    .tracking
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+    
    

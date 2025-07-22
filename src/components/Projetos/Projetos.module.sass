@@ -135,7 +135,7 @@
 
 
 
-.fadeIn
+.tracking
     animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 
 .scaleTop
@@ -157,3 +157,8 @@
     .cardProjeto
         margin-top: 10px
         width: 100%
+
+    
+@media (max-width: 600px)
+    .tracking
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both

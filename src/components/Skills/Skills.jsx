@@ -22,7 +22,7 @@ const Skills = () => {
 
     return (
         <div ref={ref} className={styles.containerSkills} >
-            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.fadeIn : ''}`}>
+            <div className={`${styles.tituloSubtitulo} ${isInView ? styles.tracking : ''}`}>
                 <h2>Minhas <span>Skills</span></h2>
                 <p>Tecnologias e ferramentas que domino e utilizo no meu dia a dia como desenvolvedor.</p>
             </div>
