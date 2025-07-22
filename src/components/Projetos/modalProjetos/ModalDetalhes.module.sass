@@ -1,0 +1,227 @@
+@use '../../../styles/variables'
+@use '../../../styles/mixin'
+@use '../../../styles/animation'
+
+.modalOverlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.8)
+    z-index: 1000
+    display: flex
+    justify-content: center
+    align-items: center
+    backdrop-filter: blur(5px)
+    animation: fadeIn 0.3s ease-out
+
+.modalContent
+    background: #1F2937
+    border-radius: 12px
+    max-width: 90%
+    max-height: 90vh
+    width: 80%
+    overflow: hidden
+    position: relative
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+    animation: scaleIn 0.3s ease-out
+
+    
+
+.closeButton
+    position: absolute
+    top: 15px
+    right: 20px
+    background: none
+    border: none
+    font-size: 2rem
+    cursor: pointer
+    z-index: 10
+    color: #fff
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.2s ease
+
+    &:hover
+        background-color: #f5f5f5
+        color: #333
+
+.modalBody
+    display: flex
+    flex-direction: column
+    overflow-y: auto
+    max-height: 90vh
+
+    // Scroll personalizado
+    &::-webkit-scrollbar
+        width: 10px
+        height: 8px
+
+    &::-webkit-scrollbar-track
+        background: #f0f0f0
+
+    &::-webkit-scrollbar-thumb
+        background-color: #b0b0b0
+        border-radius: 4px
+
+    &::-webkit-scrollbar-thumb:hover
+        background-color: #909090
+
+    @media (min-width: 1200px)
+        flex-direction: row
+
+.modalVideo
+    flex: 1
+    min-height: 300px
+    padding: 10px
+
+    video
+        width: 100%
+        height: 100%
+        object-fit: contain
+        display: block
+
+.modalInfo
+    flex: 1
+    padding: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 400px
+
+    h2
+        margin: 0 0 1rem 0
+        font-size: 1.5rem
+        font-family: variables.$fontPoppins
+
+    .descricao
+        font-family: variables.$fontOpenSans
+        color: variables.$colorDescricao
+        line-height: 1.6
+        font-size: 0.9rem
+        margin-bottom: 1rem
+        overflow-y: auto
+        white-space: rap
+
+        // Scroll personalizado
+        &::-webkit-scrollbar
+            width: 8px
+            height: 8px
+
+        &::-webkit-scrollbar-track
+            background: #f0f0f0
+
+        &::-webkit-scrollbar-thumb
+            background-color: #b0b0b0
+            border-radius: 4px
+
+        &::-webkit-scrollbar-thumb:hover
+            background-color: #909090
+
+.containerDescricao
+    min-height: 250px
+
+.downIcon
+    width: 40px
+    color: #fefefe
+    display: flex
+    justify-content: center
+    align-items: center
+
+.tecnologias
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    margin-bottom: 2rem
+
+.tecnologia
+    padding: 0.5rem 1rem
+    border-radius: 20px
+    font-size: 0.875rem
+    font-weight: 500
+
+.modalActions
+    display: flex
+    gap: 1rem
+    margin-top: auto
+
+    a
+        padding: 0.4rem 1.5rem
+        text-decoration: none
+        border-radius: 6px
+        font-weight: 500
+        transition: all 0.2s ease
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 0.5rem
+        font-family: variables.$fontPoppins
+
+        &:first-child
+            background-color: #1E3A8A
+            color: white
+
+            &:hover
+                background-color: #2563EB
+
+        &:last-child
+            background-color: #f8f9fa
+            color: #333
+            border: 1px solid #dee2e6
+
+            &:hover
+                background-color: #e9ecef66
+
+    svg
+        width: 20px
+        height: 20px
+
+// Animações
+@keyframes fadeIn
+    from
+        opacity: 0
+
+    to
+        opacity: 1
+
+@keyframes scaleIn
+    from
+        opacity: 0
+        transform: scale(0.9)
+
+    to
+        opacity: 1
+        transform: scale(1)
+
+// Responsivo
+@media (max-width: 1199px)
+    .modalBody
+        flex-direction: column
+
+    .modalVideo
+        min-height: auto
+        margin-top: 50px
+
+@media (max-width: 767px)
+    .modalContent
+        width: 95vw
+        max-height: 95vh
+
+    .modalVideo
+        min-height: auto
+        margin-top: 50px
+
+    .modalInfo
+        padding: 1.5rem
+
+    .modalActions
+        flex-direction: column
+        text-align: center
+
+        a
+            text-align: center
