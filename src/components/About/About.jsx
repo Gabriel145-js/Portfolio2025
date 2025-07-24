@@ -20,15 +20,20 @@ const About = () => {
 
       <div className={styles.about}>
         <div className={`${styles.containerImg} ${isInView ? styles.scaleIn : ''}`}>
-          <img src="/img/eu.png" alt="Foto de perfil" />
+          <img src="/img/eu.jpg" alt="Foto de perfil" />
         </div>
 
         <div className={`${styles.infosAbout} ${isInView ? styles.slideIn : ''}`}>
           <h2>Quem sou eu?</h2>
           <p>
-            Sou um desenvolvedor web full-stack com mais de 5 anos de experiência criando aplicações web modernas e escaláveis.
-            Minha paixão é transformar ideias complexas em interfaces intuitivas e eficientes.
-          </p>
+            Transformo ideias em soluções web funcionais, modernas e bem documentadas. Com 2 anos de experiência, desenvolvo interfaces responsivas integradas a serviços externos, com foco em usabilidade, performance e código limpo.
+ <br/>
+           <br/> 🧠 Integro APIs RESTful com eficiência, conectando front-end e back-end.
+            <br/>🗃️ Conhecimento sólido em bancos de dados, autenticação e dados em tempo real.
+             <br/>📄 Documentação clara e organização fazem parte do meu processo.
+             <br/>🤝 Trabalho bem em equipe, com comunicação direta e colaboração constante.
+ <br/>
+             <br/>Sempre evoluindo rumo ao full-stack, aplicando na prática as melhores soluções do desenvolvimento moderno.  </p>
 
           <div className={styles.iconesInfos}>
             <div className={styles.infoItem}>
@@ -52,15 +57,15 @@ const About = () => {
             <div className={styles.infoItem}>
               <div className={styles.infoHeader}>
                 <IconInteresse />
-                <h3>Interesses</h3>
+                <h3>Meu Mundo Além do Código</h3>
               </div>
-              <p>Tecnologia, Música, Viagens</p>
+              <p>Tecnologia, Música, Viagens, Família </p>
             </div>
           </div>
 
           <div className={styles.buttons}>
             <a href="https://github.com/Gabriel145-js" target='_blank'><IconGithub /> GitHub</a>
-            <a href=""><IconLinkedin /> Linkedin</a>
+            <a href="https://www.linkedin.com/in/gabriel-zaparolli/" target='_blank' ><IconLinkedin /> Linkedin</a>
             <a href="" download="Curriculo-GabrielZaparolli.pdf">
               Baixar Currículo
             </a>
