@@ -44,7 +44,7 @@ const [showText, setShowText] = useState(false)
                         </h2>
 
 
-                    <p className={styles.descricaoHero}>Transformo ideias em realidade digital com código limpo e designs impactantes. Especializado em criar experiências web modernas e responsivas.</p>
+                    <p className={styles.descricaoHero}> Inovação que nasce da ideia e se transforma em tecnologia. Especialista em experiências web modernas, funcionais e responsivas.</p>
 
                     <div className={styles.btnsHero}>
 
