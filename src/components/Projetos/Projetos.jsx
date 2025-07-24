@@ -28,9 +28,9 @@ const Projetos = () => {
                     ]}
                     urlDetalhes='ola'
                     titProjeto='MussattoBarber Agendamentos'
-                    descriProjeto='Sistema de agendamento online para barbearia. Permite visualizar horários disponíveis, agendar, acompanhar o status e contao com área de Admin. Interface responsiva e fácil de usar, ideal para clientes e barbeiros.'
+                    descriProjeto='Sistema de agendamento online para barbearia. Permite visualizar horários disponíveis, agendar, acompanhar o status e dashboard para área de Admin. Interface responsiva e fácil de usar, ideal para clientes e barbeiros.'
                     urlProjeto='https://mussattobarber-agendamentos.web.app/'
-                    urlGitHub='https://github.com/Gabriel145-js/mussattoBarber-agendamentos'
+                   
                 />
 
 
