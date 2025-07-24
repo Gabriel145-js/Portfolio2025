@@ -55,9 +55,9 @@ const Contatos = () => {
                     <div className={styles.redesSociais}>
                         <h3>Redes Sociais</h3>
                         <div className={styles.iconesRedes}>
-                           <a href="" className={styles.wppLink}><IconWpp/></a>
-                           <a href="" className={styles.linkedinLink}><IconLinkedin/></a>
-                           <a href="" className={styles.githubLink}><IconGitHub/></a>
+                           <a href="https://wa.me/54991529657" target='_blank' className={styles.wppLink}><IconWpp/></a>
+                           <a href="https://www.linkedin.com/in/gabriel-zaparolli/" target='_blank' className={styles.linkedinLink}><IconLinkedin/></a>
+                           <a href="https://github.com/Gabriel145-js" target='_blank' className={styles.githubLink}><IconGitHub/></a>
                         </div>
                     </div>
                 </div>
