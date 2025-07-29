@@ -29,7 +29,7 @@ const About = () => {
             Transformo ideias em soluções web funcionais, modernas e bem documentadas. Com 2 anos de experiência, desenvolvo interfaces responsivas integradas a serviços externos, com foco em usabilidade, performance e código limpo.
  <br/>
            <br/> 🧠 Integro APIs RESTful com eficiência, conectando front-end e back-end.
-            <br/>🗃️ Conhecimento sólido em bancos de dados, autenticação e dados em tempo real.
+            <br/>🗃️ Conhecimento em bancos de dados, autenticação e dados em tempo real.
              <br/>📄 Documentação clara e organização fazem parte do meu processo.
              <br/>🤝 Trabalho bem em equipe, com comunicação direta e colaboração constante.
  <br/>
