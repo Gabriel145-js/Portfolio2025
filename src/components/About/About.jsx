@@ -13,17 +13,17 @@ const About = () => {
 
   return (
     <section ref={ref} className={styles.containerAbout}>
-      <div className={`${styles.tituloSubtitulo} ${isInView ? styles.tracking : ''}`}>
+      <div style={{ opacity: 0 }} className={`${styles.tituloSubtitulo} ${isInView ? styles.tracking : ''}`}>
         <h2>Sobre <span>Mim</span></h2>
         <p>Um apaixonado por tecnologia e desenvolvimento web, sempre buscando aprender e criar soluções inovadoras.</p>
       </div>
 
       <div className={styles.about}>
-        <div className={`${styles.containerImg} ${isInView ? styles.scaleIn : ''}`}>
-          <img src="/img/eu.jpg" alt="Foto de perfil" />
+        <div style={{ opacity: 0 }} className={`${styles.containerImg} ${isInView ? styles.scaleIn : ''}`}>
+          <img src="/img/eu.jpg" alt="Foto de perfil"  />
         </div>
 
-        <div className={`${styles.infosAbout} ${isInView ? styles.slideIn : ''}`}>
+        <div style={{ opacity: 0 }} className={`${styles.infosAbout} ${isInView ? styles.slideIn : ''}`}>
           <h2>Quem sou eu?</h2>
           <p>
             Transformo ideias em soluções web funcionais, modernas e bem documentadas. Com 2 anos de experiência, desenvolvo interfaces responsivas integradas a serviços externos, com foco em usabilidade, performance e código limpo.
