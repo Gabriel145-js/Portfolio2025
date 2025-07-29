@@ -66,7 +66,7 @@ const About = () => {
           <div className={styles.buttons}>
             <a href="https://github.com/Gabriel145-js" target='_blank'><IconGithub /> GitHub</a>
             <a href="https://www.linkedin.com/in/gabriel-zaparolli/" target='_blank' ><IconLinkedin /> Linkedin</a>
-            <a href="" download="Curriculo-GabrielZaparolli.pdf">
+            <a href="pdfs/cvMeu.pdf" download="cvMeu.pdf">
               Baixar Currículo
             </a>
 
