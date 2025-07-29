@@ -5,7 +5,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 
 const Hero = () => {
-    const adjetivos = ['Web', 'Front-End', 'Back-End', 'Full-Stack']
+    const adjetivos = ['Web', 'Front-End', 'Criativo', 'Proativo']
     const [index, setIndex] = useState(0)
 const [showText, setShowText] = useState(false)
 
