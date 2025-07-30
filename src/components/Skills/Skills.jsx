@@ -12,6 +12,7 @@ import { ReactComponent as EquipeIcon } from '../../icons/softIcons/equipeIcon.s
 import { ReactComponent as ResolucaoIcon } from '../../icons/softIcons/resolucaoIcon.svg'
 import { ReactComponent as BalaoIcon } from '../../icons/softIcons/balaoIcon.svg'
 import { ReactComponent as ClockIcon } from '../../icons/softIcons/clockIcon.svg'
+import { ReactComponent as MySqlIcon } from '../../icons/mysqlIcon.svg'
 import CardHardSkills from './CardHardSkills'
 import CardSoftSkills from './CardSoftSkills'
 import useInView from '../../hooks/useInView'
@@ -67,6 +68,11 @@ const Skills = () => {
                 <CardHardSkills
                     icon=<FirebaseIcon/>
                     nomeTec='Firebase'
+                />
+
+                <CardHardSkills
+                    icon=<MySqlIcon/>
+                    nomeTec='MySQL'
                 />
 
 
