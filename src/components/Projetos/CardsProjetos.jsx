@@ -11,7 +11,9 @@ const CardsProjetos = ({
     tecnologias,
     urlDetalhes,
     urlProjeto,
-    urlGitHub
+    urlGitHub,
+    videoModal,
+    descricaoModal
 }) => {
 
     const [isModal, setIsModal] = useState(false)
@@ -62,17 +64,9 @@ const CardsProjetos = ({
             {isModal && createPortal(
                 <ModalDetalhes 
                     onClose={handleCloseModal}
-                    videoProjeto= '/videos/Mussato video.mp4'
+                    videoProjeto={videoModal}
                     titProjeto={titProjeto}
-                    descriProjeto={`Criei uma plataforma web moderna para facilitar o agendamento de horários em barbearias. Intuitiva, rápida e acessível, a aplicação permite que os clientes escolham serviços, visualizem horários disponíveis e recebam confirmações automáticas — tudo em poucos cliques.<br /><br />
-                    ⚙️ Funcionalidades:<br />
-                    • Login e cadastro de usuários<br />
-                    • Agendamento com datas e horários em tempo real<br />
-                    • Cadastro de serviços e profissionais<br />
-                    • Histórico de agendamentos com status automático<br />
-                    • Painel administrativo para controle de agenda<br /><br />
-                    Com design responsivo e experiência fluida, o sistema oferece praticidade tanto para o cliente quanto para a barbearia, otimizando o dia a dia e elevando o nível do atendimento.`}
-
+                    descriProjeto={descricaoModal}
                     tecnologias={tecnologias}
                     urlDetalhes={urlDetalhes}
                     urlProjeto={urlProjeto}
