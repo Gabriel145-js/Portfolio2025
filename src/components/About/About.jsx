@@ -20,20 +20,20 @@ const About = () => {
 
       <div className={styles.about}>
         <div style={{ opacity: 0 }} className={`${styles.containerImg} ${isInView ? styles.scaleIn : ''}`}>
-          <img src="/img/eu.jpg" alt="Foto de perfil"  />
+          <img src="/img/eu.jpg" alt="Foto de perfil" />
         </div>
 
         <div style={{ opacity: 0 }} className={`${styles.infosAbout} ${isInView ? styles.slideIn : ''}`}>
           <h2>Quem sou eu?</h2>
           <p>
             Transformo ideias em soluções web funcionais, modernas e bem documentadas. Com 2 anos de experiência, desenvolvo interfaces responsivas integradas a serviços externos, com foco em usabilidade, performance e código limpo.
- <br/>
-           <br/> 🧠 Integro APIs RESTful com eficiência, conectando front-end e back-end.
-            <br/>🗃️ Conhecimento em bancos de dados, autenticação e dados em tempo real.
-             <br/>📄 Documentação clara e organização fazem parte do meu processo.
-             <br/>🤝 Trabalho bem em equipe, com comunicação direta e colaboração constante.
- <br/>
-             <br/>Sempre evoluindo rumo ao full-stack, aplicando na prática as melhores soluções do desenvolvimento moderno.  </p>
+            <br />
+            <br /> 🧠 Integro APIs RESTful com eficiência, conectando front-end e back-end.
+            <br />🗃️ Conhecimento em bancos de dados, autenticação e dados em tempo real.
+            <br />📄 Documentação clara e organização fazem parte do meu processo.
+            <br />🤝 Trabalho bem em equipe, com comunicação direta e colaboração constante.
+            <br />
+            <br />Sempre evoluindo rumo ao full-stack, aplicando na prática as melhores soluções do desenvolvimento moderno.  </p>
 
           <div className={styles.iconesInfos}>
             <div className={styles.infoItem}>
