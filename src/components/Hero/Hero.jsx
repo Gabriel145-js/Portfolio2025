@@ -5,9 +5,9 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 
 const Hero = () => {
-    const adjetivos = ['Web', 'Front-End', 'Criativo', 'Proativo']
+    const adjetivos = ['Web', 'Front-End', 'Back-End', 'Full-Stack', 'Criativo', 'Proativo']
     const [index, setIndex] = useState(0)
-const [showText, setShowText] = useState(false)
+    const [showText, setShowText] = useState(false)
 
     useEffect(() => {
         // Ativa animação apos o tempo da entrada
@@ -35,13 +35,13 @@ const [showText, setShowText] = useState(false)
                     </h1>
 
                     {/* Só exibe após o tempo de delay */}
-                   
-                        <h2 className={styles.anima}>
-                            Desenvolvedor{' '}
-                             {showText && (<span key={index} className={styles.trocaAdjetivo}>
-                                {adjetivos[index]}
-                            </span>)}
-                        </h2>
+
+                    <h2 className={styles.anima}>
+                        Desenvolvedor{' '}
+                        {showText && (<span key={index} className={styles.trocaAdjetivo}>
+                            {adjetivos[index]}
+                        </span>)}
+                    </h2>
 
 
                     <p className={styles.descricaoHero}> Inovação que nasce da ideia e se transforma em tecnologia. Especialista em experiências web modernas, funcionais e responsivas.</p>
